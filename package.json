@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "To help on work with Dates, Arrays and Strings",
   "main": "dist/index.js",
-  "repository": "git@github.com:AndreOneti/dot_functins_utils.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreOneti/dot_functins_utils.git"
+  },
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -13,5 +16,15 @@
   "devDependencies": {
     "@types/node": "^13.9.8",
     "typescript": "^3.8.3"
-  }
+  },
+  "keywords": [
+    "express",
+    "expressjs",
+    "rest",
+    "rest-api"
+  ],
+  "bugs": {
+    "url": "https://github.com/AndreOneti/dot_functins_utils/issues"
+  },
+  "homepage": "https://github.com/AndreOneti/dot_functins_utils#readme"
 }
