@@ -1,3 +1,3 @@
 const utils = require('./dist');
 
-console.log([1, 2, 3].middle());
+console.log([1, 2, 3].getMiddleElement());

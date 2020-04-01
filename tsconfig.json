@@ -7,7 +7,7 @@
     "strict": true
   },
   "include": [
-    "prototypes"
+    "src"
   ],
   "exclude": [
     "node_modules",

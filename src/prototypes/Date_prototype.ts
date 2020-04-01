@@ -2,10 +2,10 @@
 
 interface Date {
   getWeekDay(): string;
-  weekBegin(): Date;
-  firstDay(): Date;
-  weekEnd(): Date;
-  lastDay(): Date;
+  getWeekBegin(): Date;
+  getFirstDay(): Date;
+  getWeekEnd(): Date;
+  getLastDay(): Date;
 }
 
 Date.prototype.getWeekDay = function () {
@@ -13,20 +13,20 @@ Date.prototype.getWeekDay = function () {
   return weekEng[this.getDay()];
 };
 
-Date.prototype.weekBegin = function () {
+Date.prototype.getWeekBegin = function () {
   var first = this.getDate() - this.getDay();
   return new Date(this.setDate(first));
 };
 
-Date.prototype.weekEnd = function () {
+Date.prototype.getWeekEnd = function () {
   var last = this.getDate() - this.getDay() + 6
   return new Date(this.setDate(last));
 };
 
-Date.prototype.firstDay = function () {
+Date.prototype.getFirstDay = function () {
   return new Date(this.getFullYear(), this.getMonth(), 1);
 };
 
-Date.prototype.lastDay = function () {
+Date.prototype.getLastDay = function () {
   return new Date(this.getFullYear(), this.getMonth() + 1, 0);
 };

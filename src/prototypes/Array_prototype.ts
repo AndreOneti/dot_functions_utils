@@ -1,27 +1,26 @@
 'use strict'
 
 interface Array<T> {
-  last(): string;
-  first(): string;
-  middle(): Array<T> | null;
+  getLastElement(): string;
+  getFirstElement(): string;
+  getMiddleElement(): Array<T> | null;
 }
 
-Array.prototype.last = function () {
+Array.prototype.getLastElement = function () {
   if (this.length <= 0)
     return null;
   return this[this.length - 1];
 };
 
-Array.prototype.first = function () {
+Array.prototype.getFirstElement = function () {
   if (this.length <= 0)
     return null;
   return this[0];
 };
 
-Array.prototype.middle = function () {
+Array.prototype.getMiddleElement = function () {
   if (this.length <= 0)
     return null;
-  console.log(Math.floor(this.length / 2));
   let middle = [Math.floor(this.length / 2)];
   let elements: any[] = [];
   this.length % 2 == 0
