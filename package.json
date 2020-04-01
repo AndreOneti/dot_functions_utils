@@ -1,7 +1,7 @@
 {
   "name": "dot_functions_utils",
   "version": "0.0.1",
-  "description": "To help on work with Dates and Arrays",
+  "description": "To help on work with Dates, Arrays and Strings",
   "main": "dist/index.js",
   "repository": "git@github.com:AndreOneti/dot_functins_utils.git",
   "license": "MIT",
