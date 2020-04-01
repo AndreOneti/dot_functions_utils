@@ -1,0 +1,16 @@
+{
+  "name": "dot_functions_utils",
+  "version": "0.0.1",
+  "description": "To help on work with Dates and Arrays",
+  "main": "dist/index.js",
+  "repository": "git@github.com:AndreOneti/dot_functins_utils.git",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.8",
+    "typescript": "^3.8.3"
+  }
+}
