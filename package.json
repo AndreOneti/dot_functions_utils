@@ -1,6 +1,6 @@
 {
   "name": "dot_functions_utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "To help on work with Dates, Arrays and Strings",
   "main": "dist/index.js",
   "repository": {
@@ -9,10 +9,12 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "jest --coverage"
   },
   "devDependencies": {
     "@types/node": "^13.9.8",
+    "jest": "^25.2.4",
     "typescript": "^3.8.3"
   },
   "keywords": [
