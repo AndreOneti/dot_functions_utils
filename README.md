@@ -45,28 +45,42 @@ list.getFirstElement();               // 1
 list.getMiddleElement();              // [2, 3]
 myList.getMiddleElement();            // [3]
 
-// Work with Strings or function (same functionalits)
+// Work with Strings
 
-let myFirstString = "1";
+let myFirstString = '1';
 
 myFirstString.twoDigits();            // '01'
-twoDigits(myFirstString);             // '01'
 myFirstString.threeDigits();          // '001'
-threeDigits(myFirstString);           // '001'
 
 let mySecondSting = '11';
 
 mySecondSting.twoDigits();            // '11'
-twoDigits(mySecondSting);             // '11'
 mySecondSting.threeDigits();          // '011'
-threeDigits(mySecondSting);           // '011'
 
 let myThirdSting = '123';
 
 myThirdSting.twoDigits();             // '123'
-twoDigits(myThirdSting);              // '123'
 myThirdSting.threeDigits();           // '123'
-threeDigits(myThirdSting);            // '123'
+
+let myFourthString = 'my string';
+
+myFourthString.capalize();            // 'My string'
+myFourthString.capalizeAll();         // 'My String'
+
+// Work with functions
+
+let firstString = '1';
+let secondSting = '11';
+let thirdSting = '123';
+
+twoDigits(firstString);             // '01'
+threeDigits(firstString);           // '001'
+
+twoDigits(secondSting);             // '11'
+threeDigits(secondSting);           // '011'
+
+twoDigits(thirdSting);              // '123'
+threeDigits(thirdSting);            // '123'
 ```
 
 <br>
