@@ -26,6 +26,7 @@ Array.prototype.getMiddleElement = function () {
   this.length % 2 == 0
     ? middle.push(Math.floor(this.length / 2) - 1)
     : null;
+  /* istanbul ignore next */
   middle.sort((a, b) => (a > b) ? 1 : -1);
 
   middle.forEach(el => {
