@@ -22,5 +22,20 @@ describe('String prototype test', () => {
     expect('11'.twoDigits()).toBe('11');
   });
 
-});
+  it('should return string captalized', async () => {
+    expect('my string'.capalize()).toBe('My string');
+  });
 
+  it('should return string captalized', async () => {
+    expect('string'.capalize()).toBe('String');
+  });
+
+  it('should return all strings captalized', async () => {
+    expect('my string'.capalizeAll()).toBe('My String');
+  });
+
+  it('should return all strings captalized', async () => {
+    expect('string'.capalizeAll()).toBe('String');
+  });
+
+});
