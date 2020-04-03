@@ -1,4 +1,4 @@
-require('../../../dist/index');
+import '../index';
 
 describe('Date prototype test', () => {
 

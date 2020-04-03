@@ -1,4 +1,4 @@
-const { threeDigits, twoDigits } = require('../../../dist/index');
+import { threeDigits, twoDigits } from '../index';
 
 describe('Functions test', () => {
 

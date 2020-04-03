@@ -1,4 +1,4 @@
-require('../../../dist/index');
+import '../index';
 
 describe('Array tests', () => {
   const firstList = [1, 2, 3];
