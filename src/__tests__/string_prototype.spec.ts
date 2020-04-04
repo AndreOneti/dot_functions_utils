@@ -23,19 +23,31 @@ describe('String prototype test', () => {
   });
 
   it('should return string captalized', async () => {
-    expect('my string'.capalize()).toBe('My string');
+    expect('my string'.captalize()).toBe('My string');
   });
 
   it('should return string captalized', async () => {
-    expect('string'.capalize()).toBe('String');
+    expect('string'.captalize()).toBe('String');
   });
 
   it('should return all strings captalized', async () => {
-    expect('my string'.capalizeAll()).toBe('My String');
+    expect('my string'.captalizeAll()).toBe('My String');
   });
 
   it('should return all strings captalized', async () => {
-    expect('string'.capalizeAll()).toBe('String');
+    expect('string'.captalizeAll()).toBe('String');
+  });
+
+  it('should return all strings captalized', async () => {
+    expect('my string'.splitToArray(3)).toEqual(expect.arrayContaining(['my ', 'str', 'ing']));
+  });
+
+  it('should return all strings captalized', async () => {
+    expect('string'.splitToArray(3)).toEqual(expect.arrayContaining(['str', 'ing']));
+  });
+
+  it('should return all strings captalized', async () => {
+    expect(''.splitToArray(3)).toEqual(expect.arrayContaining([]));
   });
 
 });

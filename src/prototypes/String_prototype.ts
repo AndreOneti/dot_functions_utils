@@ -1,9 +1,10 @@
 
 interface String {
-  capalize(): string;
+  captalize(): string;
   twoDigits(): string;
   threeDigits(): string;
-  capalizeAll(): string;
+  captalizeAll(): string;
+  splitToArray(minLength: number): string[];
 }
 
 String.prototype.twoDigits = function () {
@@ -17,14 +18,25 @@ String.prototype.threeDigits = function () {
   else return Number(this).toString();
 };
 
-String.prototype.capalize = function () {
+String.prototype.captalize = function () {
   return this.substr(0, 1).toUpperCase() + this.substr(1).toLowerCase();
 }
 
-String.prototype.capalizeAll = function () {
+String.prototype.captalizeAll = function () {
   let array = this.split(' '), finalString = '';
   array.forEach(letter => {
     finalString += `${letter.substr(0, 1).toUpperCase() + letter.substr(1).toLowerCase()} `;
   });
   return finalString.trim();
+}
+
+String.prototype.splitToArray = function (minLength: number) {
+  let index = Math.floor((this.length / minLength));
+  /* istanbul ignore next */
+  if ((this.length % minLength) > 0) index = Number(index) + 1;
+  let array: string[] = [];
+  for (let i = 0; i < index; i++) {
+    array.push(this.slice(minLength * i, minLength * (i + 1)));
+  }
+  return array;
 }

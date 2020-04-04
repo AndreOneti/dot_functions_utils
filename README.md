@@ -64,23 +64,34 @@ myThirdSting.threeDigits();           // '123'
 
 let myFourthString = 'my string';
 
-myFourthString.capalize();            // 'My string'
-myFourthString.capalizeAll();         // 'My String'
+myFourthString.captalize();           // 'My string'
+myFourthString.captalizeAll();        // 'My String'
+
+let myString = 'my string';
+
+myFourthString.splitToArray(3);       // [ 'my ', 'str', 'ing' ]
+myFourthString.splitToArray(2);       // [ 'my', ' s', 'tr', 'in', 'g' ]
+
+myString = '';
+
+myString.splitToArray(2);             // []
 
 // Work with functions
 
 let firstString = '1';
+
+twoDigits(firstString);               // '01'
+threeDigits(firstString);             // '001'
+
 let secondSting = '11';
+
+twoDigits(secondSting);               // '11'
+threeDigits(secondSting);             // '011'
+
 let thirdSting = '123';
 
-twoDigits(firstString);             // '01'
-threeDigits(firstString);           // '001'
-
-twoDigits(secondSting);             // '11'
-threeDigits(secondSting);           // '011'
-
-twoDigits(thirdSting);              // '123'
-threeDigits(thirdSting);            // '123'
+twoDigits(thirdSting);                // '123'
+threeDigits(thirdSting);              // '123'
 ```
 
 <br>
