@@ -33,4 +33,16 @@ describe('Date prototype test', () => {
     expect(dateNow.getLastDay().toLocaleString()).toBe((new Date(dateNow.getFullYear(), dateNow.getMonth() + 1, 0)).toLocaleString());
   });
 
+  dateNow = new Date;
+
+  it('should return is Date equal today plus 15 day', async () => {
+    expect(dateNow.nextDay(7).toLocaleString()).toBe((new Date(dateNow.setDate(dateNow.getDate() + 7))).toLocaleString());
+  });
+
+  dateNow = new Date;
+
+  it('should return is Date equal today less 15 day', async () => {
+    expect(dateNow.backDay(15).toLocaleString()).toBe((new Date(dateNow.setDate(dateNow.getDate() - 15))).toLocaleString());
+  });
+
 });

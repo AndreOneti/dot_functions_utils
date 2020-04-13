@@ -25,15 +25,17 @@ npm i dot_functions_utils
 
 const { threeDigits, twoDigits } = require('dot_functions_utils');
 
-var dateNow = new Date;
+var dateNow = new Date;               // 2020-04-13T14:09:02.649Z
 
 // Work with Dates
 
-console.log(dateNow.getWeekDay());    // Wednesday
+console.log(dateNow.getWeekDay());    // Monday
 console.log(dateNow.getFirstDay());   // 2020-04-01T03:00:00.000Z
 console.log(dateNow.getLastDay());    // 2020-04-30T03:00:00.000Z
-console.log(dateNow.getWeekEnd());    // 2020-04-05T02:36:03.999Z
-console.log(dateNow.getWeekBegin());  // 2020-03-29T02:35:43.286Z
+console.log(dateNow.getWeekEnd());    // 2020-04-18T14:09:02.649Z
+console.log(dateNow.getWeekBegin());  // 2020-04-12T14:09:02.649Z
+console.log(dateNow.nextDay(5));      // 2020-04-18T14:09:02.649Z
+console.log(dateNow.backDay(5));      // 2020-03-08T14:09:02.649Z
 
 // Work with Arrays
 
