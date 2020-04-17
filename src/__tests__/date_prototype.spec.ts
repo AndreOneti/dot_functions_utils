@@ -45,4 +45,11 @@ describe('Date prototype test', () => {
     expect(dateNow.backDay(15).toLocaleString()).toBe((new Date(dateNow.setDate(dateNow.getDate() - 15))).toLocaleString());
   });
 
+  dateNow = new Date;
+
+  const expected = /[0-9]{4}-[0-9]{2}-[0-9]{2}/;
+  it('should return is String on format "yyyy-mm-dd"', async () => {
+    expect(dateNow.format()).toEqual(expect.stringMatching(expected));
+  });
+
 });

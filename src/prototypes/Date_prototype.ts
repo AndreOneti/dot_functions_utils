@@ -8,6 +8,7 @@ interface Date {
   getLastDay(): Date;
   nextDay(day: number): Date;
   backDay(day: number): Date;
+  format(): string;
 }
 
 Date.prototype.getWeekDay = function () {
@@ -42,3 +43,15 @@ Date.prototype.backDay = function (day: number) {
   let dateNow = new Date(this);
   return new Date(dateNow.setDate(dateNow.getDate() - day));
 };
+
+Date.prototype.format = function () {
+  let day = this.getDate();
+  let month = this.getMonth();
+  let year = this.getFullYear();
+  return `${year}-${twoDigits(month)}-${twoDigits(day)}`;
+};
+
+function twoDigits(digit: string | number): string {
+  if (0 <= digit && digit < 10) return "0" + digit.toString();
+  return digit.toString();
+}

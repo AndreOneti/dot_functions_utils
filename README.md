@@ -36,6 +36,7 @@ console.log(dateNow.getWeekEnd());    // 2020-04-18T14:09:02.649Z
 console.log(dateNow.getWeekBegin());  // 2020-04-12T14:09:02.649Z
 console.log(dateNow.nextDay(5));      // 2020-04-18T14:09:02.649Z
 console.log(dateNow.backDay(5));      // 2020-03-08T14:09:02.649Z
+console.log(dateNow.format());        // '2020-04-13'
 
 // Work with Arrays
 
@@ -99,15 +100,15 @@ threeDigits(thirdSting);              // '123'
 <br>
 <hr>
 
-[![npm](https://img.shields.io/npm/l/express.svg)](https://github.com/AndreOneti/dot_functins_utils/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/l/express.svg)](https://github.com/AndreOneti/dot_functions_utils/blob/master/LICENSE)
 
-[travis-report-image]: https://travis-ci.org/AndreOneti/dot_functins_utils.svg?branch=master
-[travis-report-url]: https://travis-ci.org/github/AndreOneti/dot_functins_utils
+[travis-report-image]: https://travis-ci.org/AndreOneti/dot_functions_utils.svg?branch=master
+[travis-report-url]: https://travis-ci.org/github/AndreOneti/dot_functions_utils
 [downloads-image]: https://img.shields.io/npm/dm/dot_functions_utils.svg
 [downloads-url]: https://npmjs.org/package/dot_functions_utils
 [npm-image]: https://img.shields.io/npm/v/dot_functions_utils.svg
 [npm-url]: https://npmjs.org/package/dot_functions_utils
 [maintenance-img]: https://img.shields.io/badge/Maintained%3F-yes-green.svg
-[maintenance-url]: https://github.com/AndreOneti/dot_functins_utils
-[issues-open-image]: https://img.shields.io/github/issues/AndreOneti/dot_functins_utils.svg
-[issues-open-url]: https://github.com/AndreOneti/dot_functins_utils/issues?q=is%3Aopen+is%3Aissue
+[maintenance-url]: https://github.com/AndreOneti/dot_functions_utils
+[issues-open-image]: https://img.shields.io/github/issues/AndreOneti/dot_functions_utils.svg
+[issues-open-url]: https://github.com/AndreOneti/dot_functions_utils/issues?q=is%3Aopen+is%3Aissue
