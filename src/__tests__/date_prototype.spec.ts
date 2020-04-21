@@ -52,6 +52,15 @@ describe('Date prototype test', () => {
     expect(dateNow.format()).toEqual(expect.stringMatching(expected));
   });
 
+  it('should return is String on format "yyyy-mm-dd"', async () => {
+    expect(dateNow.format('yyyy-mm-dd')).toEqual(expect.stringMatching(expected));
+  });
+
+  const expectedReverse = /[0-9]{2}-[0-9]{2}-[0-9]{4}/;
+  it('should return is String on format "dd-mm-yyyy"', async () => {
+    expect(dateNow.format('dd-mm-yyyy')).toEqual(expect.stringMatching(expectedReverse));
+  });
+
   dateNow = new Date;
 
   it('should return the date in 1 month ahead', async () => {

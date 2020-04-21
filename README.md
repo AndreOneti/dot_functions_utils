@@ -29,76 +29,78 @@ var dateNow = new Date;               // 2020-04-13T14:09:02.649Z
 
 // Work with Dates
 
-console.log(dateNow.getWeekDay());      // Monday
-console.log(dateNow.getFirstDay());     // 2020-04-01T03:00:00.000Z
-console.log(dateNow.getLastDay());      // 2020-04-30T03:00:00.000Z
-console.log(dateNow.getWeekEnd());      // 2020-04-18T14:09:02.649Z
-console.log(dateNow.getWeekBegin());    // 2020-04-12T14:09:02.649Z
-console.log(dateNow.nextDay(5));        // 2020-04-18T14:09:02.649Z
-console.log(dateNow.backDay(5));        // 2020-04-08T14:09:02.649Z
-console.log(dateNow.format());          // '2020-04-13'
-console.log(dateNow.nextMonth(1));      // 2020-05-13T14:09:02.649Z
-console.log(dateNow.previousMonth(1));  // 2020-03-13T14:09:02.649Z
-console.log(dateNow.nextYear(1));       // 2021-04-13T14:09:02.649Z
-console.log(dateNow.previousYear(1));   // 2019-04-13T14:09:02.649Z
+console.log(dateNow.getWeekDay());              // Monday
+console.log(dateNow.getFirstDay());             // 2020-04-01T03:00:00.000Z
+console.log(dateNow.getLastDay());              // 2020-04-30T03:00:00.000Z
+console.log(dateNow.getWeekEnd());              // 2020-04-18T14:09:02.649Z
+console.log(dateNow.getWeekBegin());            // 2020-04-12T14:09:02.649Z
+console.log(dateNow.nextDay(5));                // 2020-04-18T14:09:02.649Z
+console.log(dateNow.backDay(5));                // 2020-04-08T14:09:02.649Z
+console.log(dateNow.format());                  // '2020-04-13'
+console.log(dateNow.format('yyyy-mm-dd'));      // '2020-04-13'
+console.log(dateNow.format('dd-mm-yyyy'));      // '2020-04-13'
+console.log(dateNow.nextMonth(1));              // 2020-05-13T14:09:02.649Z
+console.log(dateNow.previousMonth(1));          // 2020-03-13T14:09:02.649Z
+console.log(dateNow.nextYear(1));               // 2021-04-13T14:09:02.649Z
+console.log(dateNow.previousYear(1));           // 2019-04-13T14:09:02.649Z
 
 // Work with Arrays
 
 let list = [1, 2, 3, 4];
 let myList = [2, 3, 4];
 
-list.getLastElement();                  // 4
-list.getFirstElement();                 // 1
-list.getMiddleElement();                // [2, 3]
-myList.getMiddleElement();              // [3]
+list.getLastElement();                          // 4
+list.getFirstElement();                         // 1
+list.getMiddleElement();                        // [2, 3]
+myList.getMiddleElement();                      // [3]
 
 // Work with Strings
 
 let myFirstString = '1';
 
-myFirstString.twoDigits();              // '01'
-myFirstString.threeDigits();            // '001'
+myFirstString.twoDigits();                      // '01'
+myFirstString.threeDigits();                    // '001'
 
-let mySecondSting = '11';
+let mySecondString = '11';
 
-mySecondSting.twoDigits();              // '11'
-mySecondSting.threeDigits();            // '011'
+mySecondString.twoDigits();                      // '11'
+mySecondString.threeDigits();                    // '011'
 
-let myThirdSting = '123';
+let myThirdString = '123';
 
-myThirdSting.twoDigits();               // '123'
-myThirdSting.threeDigits();             // '123'
+myThirdString.twoDigits();                       // '123'
+myThirdString.threeDigits();                     // '123'
 
 let myFourthString = 'my string';
 
-myFourthString.captalize();             // 'My string'
-myFourthString.captalizeAll();          // 'My String'
+myFourthString.captalize();                     // 'My string'
+myFourthString.captalizeAll();                  // 'My String'
 
 let myString = 'my string';
 
-myFourthString.splitToArray(3);         // [ 'my ', 'str', 'ing' ]
-myFourthString.splitToArray(2);         // [ 'my', ' s', 'tr', 'in', 'g' ]
+myFourthString.splitToArray(3);                 // [ 'my ', 'str', 'ing' ]
+myFourthString.splitToArray(2);                 // [ 'my', ' s', 'tr', 'in', 'g' ]
 
 myString = '';
 
-myString.splitToArray(2);               // []
+myString.splitToArray(2);                       // []
 
 // Work with functions
 
 let firstString = '1';
 
-twoDigits(firstString);                 // '01'
-threeDigits(firstString);               // '001'
+twoDigits(firstString);                         // '01'
+threeDigits(firstString);                       // '001'
 
-let secondSting = '11';
+let secondString = '11';
 
-twoDigits(secondSting);                 // '11'
-threeDigits(secondSting);               // '011'
+twoDigits(secondString);                         // '11'
+threeDigits(secondString);                       // '011'
 
-let thirdSting = '123';
+let thirdString = '123';
 
-twoDigits(thirdSting);                  // '123'
-threeDigits(thirdSting);                // '123'
+twoDigits(thirdString);                          // '123'
+threeDigits(thirdString);                        // '123'
 ```
 
 <br>

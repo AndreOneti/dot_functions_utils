@@ -9,6 +9,8 @@ interface Date {
   nextDay(day: number): Date;
   backDay(day: number): Date;
   format(): string;
+  format(type: "yyyy-mm-dd"): string;
+  format(type: "dd-mm-yyyy"): string;
   nextMonth(month: number): Date;
   previousMonth(month: number): Date;
   nextYear(year: number): Date;
@@ -52,6 +54,9 @@ Date.prototype.format = function () {
   let day = this.getDate();
   let month = this.getMonth();
   let year = this.getFullYear();
+  let arg = arguments[0];
+  if (arg && arg === "yyyy-mm-dd") return `${year}-${twoDigits(month)}-${twoDigits(day)}`;
+  if (arg && arg === "dd-mm-yyyy") return `${twoDigits(day)}-${twoDigits(month)}-${year}`;
   return `${year}-${twoDigits(month)}-${twoDigits(day)}`;
 };
 
