@@ -9,6 +9,8 @@ interface Date {
   nextDay(day: number): Date;
   backDay(day: number): Date;
   format(): string;
+  nextMonth(month: number): Date;
+  previousMonth(month: number): Date;
 }
 
 Date.prototype.getWeekDay = function () {
@@ -50,6 +52,16 @@ Date.prototype.format = function () {
   let year = this.getFullYear();
   return `${year}-${twoDigits(month)}-${twoDigits(day)}`;
 };
+
+Date.prototype.nextMonth = function (month: number) {
+  let dateNow = new Date(this);
+  return new Date(dateNow.setMonth(dateNow.getMonth() + month));
+}
+
+Date.prototype.previousMonth = function (month: number) {
+  let dateNow = new Date(this);
+  return new Date(dateNow.setMonth(dateNow.getMonth() - month));
+}
 
 function twoDigits(digit: string | number): string {
   if (0 <= digit && digit < 10) return "0" + digit.toString();

@@ -52,4 +52,16 @@ describe('Date prototype test', () => {
     expect(dateNow.format()).toEqual(expect.stringMatching(expected));
   });
 
+  dateNow = new Date;
+
+  it('should return the date in 1 month ahead', async () => {
+    expect(dateNow.nextMonth(1).toLocaleString()).toBe((new Date(dateNow.setMonth(dateNow.getMonth() + 1))).toLocaleString());
+  });
+
+  dateNow = new Date;
+
+  it('should return the date 1 month ago', async () => {
+    expect(dateNow.previousMonth(1).toLocaleString()).toBe((new Date(dateNow.setMonth(dateNow.getMonth() - 1))).toLocaleString());
+  });
+
 });
