@@ -64,4 +64,16 @@ describe('Date prototype test', () => {
     expect(dateNow.previousMonth(1).toLocaleString()).toBe((new Date(dateNow.setMonth(dateNow.getMonth() - 1))).toLocaleString());
   });
 
+  dateNow = new Date;
+
+  it('should return the date in 1 year ahead', async () => {
+    expect(dateNow.nextYear(1).toLocaleString()).toBe((new Date(dateNow.setFullYear(dateNow.getFullYear() + 1))).toLocaleString());
+  });
+
+  dateNow = new Date;
+
+  it('should return the date 1 year ago', async () => {
+    expect(dateNow.previousYear(1).toLocaleString()).toBe((new Date(dateNow.setFullYear(dateNow.getFullYear() - 1))).toLocaleString());
+  });
+
 });
