@@ -38,7 +38,7 @@ console.log(dateNow.nextDay(5));                // 2020-04-18T14:09:02.649Z
 console.log(dateNow.backDay(5));                // 2020-04-08T14:09:02.649Z
 console.log(dateNow.format());                  // '2020-04-13'
 console.log(dateNow.format('yyyy-mm-dd'));      // '2020-04-13'
-console.log(dateNow.format('dd-mm-yyyy'));      // '2020-04-13'
+console.log(dateNow.format('dd-mm-yyyy'));      // '13-04-2020'
 console.log(dateNow.nextMonth(1));              // 2020-05-13T14:09:02.649Z
 console.log(dateNow.previousMonth(1));          // 2020-03-13T14:09:02.649Z
 console.log(dateNow.nextYear(1));               // 2021-04-13T14:09:02.649Z
