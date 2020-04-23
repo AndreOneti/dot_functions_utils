@@ -1,10 +1,11 @@
-
 interface String {
   captalize(): string;
   twoDigits(): string;
   threeDigits(): string;
   captalizeAll(): string;
   splitToArray(minLength: number): string[];
+  toBase64(): string;
+  fromBase64(): string;
 }
 
 String.prototype.twoDigits = function () {
@@ -39,4 +40,12 @@ String.prototype.splitToArray = function (minLength: number) {
     array.push(this.slice(minLength * i, minLength * (i + 1)));
   }
   return array;
+}
+
+String.prototype.toBase64 = function () {
+  return Buffer.from(this).toString('base64');
+}
+
+String.prototype.fromBase64 = function () {
+  return Buffer.from(this.toString(), 'base64').toString();
 }

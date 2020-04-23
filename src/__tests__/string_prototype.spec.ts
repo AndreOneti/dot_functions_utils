@@ -50,4 +50,12 @@ describe('String prototype test', () => {
     expect(''.splitToArray(3)).toEqual(expect.arrayContaining([]));
   });
 
+  it('should return encoded strings', async () => {
+    expect('Hello World!'.toBase64()).toBe('SGVsbG8gV29ybGQh');
+  });
+
+  it('should return dencoded strings', async () => {
+    expect('SGVsbG8gV29ybGQh'.fromBase64()).toBe('Hello World!');
+  });
+
 });
