@@ -9,28 +9,27 @@
 
 ## How to use
 
-installing using yarn
-
-``` sh
-yarn add dot_functions_utils
-```
-
-installing using npm
+### Install
 
 ``` sh
 npm i dot_functions_utils
+or
+yarn add dot_functions_utils
 ```
 
-``` javascript
+<hr>
 
-const { threeDigits, twoDigits, generateUniqueID  } = require('dot_functions_utils');
+### Dates
+
+``` javascript
+require('dot_functions_utils');
 
 var dateNow = new Date;                           // 2020-04-13T14:09:02.649Z
 
-// Work with Dates
-
 console.log(dateNow.getWeekDay());                // Monday
-console.log(dateNow.getWeekDay('pt-Br'))          // Segunda
+console.log(dateNow.getWeekDay('eng'));           // Monday
+console.log(dateNow.getWeekDay('es'));            // Lunes
+console.log(dateNow.getWeekDay('pt-br'));         // Segunda
 console.log(dateNow.getFirstDay());               // 2020-04-01T03:00:00.000Z
 console.log(dateNow.getLastDay());                // 2020-04-30T03:00:00.000Z
 console.log(dateNow.getWeekEnd());                // 2020-04-18T14:09:02.649Z
@@ -45,9 +44,18 @@ console.log(dateNow.previousMonth(1));            // 2020-03-13T14:09:02.649Z
 console.log(dateNow.nextYear(1));                 // 2021-04-13T14:09:02.649Z
 console.log(dateNow.previousYear(1));             // 2019-04-13T14:09:02.649Z
 console.log(dateNow.getMonthName());              // April
-console.log(dateNow.getMonthName('pt-Br'))        // Abril
+console.log(dateNow.getMonthName('eng'));         // April
+console.log(dateNow.getMonthName('es'));          // Abril
+console.log(dateNow.getMonthName('pt-br'));       // Abril
 
-// Work with Arrays
+```
+
+<hr>
+
+### Arrays
+
+``` javascript
+require('dot_functions_utils');
 
 let list = [1, 2, 3, 4];
 let myList = [2, 3, 4];
@@ -57,7 +65,14 @@ list.getFirstElement();                           // 1
 list.getMiddleElement();                          // [2, 3]
 myList.getMiddleElement();                        // [3]
 
-// Work with Strings
+```
+
+<hr>
+
+### Strings
+
+``` javascript
+require('dot_functions_utils');
 
 let myFirstString = '1';
 
@@ -96,7 +111,14 @@ myString = 'SGVsbG8gV29ybGQh';
 
 myString.fromBase64(2);                           // []
 
-// Work with functions
+```
+
+<hr>
+
+### Functions
+
+``` javascript
+const { threeDigits, twoDigits, generateUniqueID  } = require('dot_functions_utils');
 
 let firstString = '1';
 

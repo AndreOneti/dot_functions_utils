@@ -8,8 +8,16 @@ describe('Date prototype test', () => {
     expect(dateNow.getWeekDay()).toBe('Thursday');
   });
 
+  it('should return is string equal Thursday', async () => {
+    expect(dateNow.getWeekDay('en')).toBe('Thursday');
+  });
+
   it('should return is string equal Quinta', async () => {
-    expect(dateNow.getWeekDay('pt-Br')).toBe('Quinta');
+    expect(dateNow.getWeekDay('pt-br')).toBe('Quinta');
+  });
+
+  it('should return is string equal Jueves', async () => {
+    expect(dateNow.getWeekDay('es')).toBe('Jueves');
   });
 
   dateNow = new Date;
@@ -94,7 +102,15 @@ describe('Date prototype test', () => {
     expect(dateNow.getMonthName()).toBe('April');
   });
 
+  it('should return is string equal April', async () => {
+    expect(dateNow.getMonthName('en')).toBe('April');
+  });
+
   it('should return is string equal Abril', async () => {
-    expect(dateNow.getMonthName('pt-Br')).toBe('Abril');
+    expect(dateNow.getMonthName('pt-br')).toBe('Abril');
+  });
+
+  it('should return is string equal Abril', async () => {
+    expect(dateNow.getMonthName('es')).toBe('Abril');
   });
 });

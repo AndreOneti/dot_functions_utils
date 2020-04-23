@@ -2,7 +2,9 @@
 
 interface Date {
   getWeekDay(): string;
-  getWeekDay(language: 'pt-Br'): string;
+  getWeekDay(language: 'pt-br'): string;
+  getWeekDay(language: 'en'): string;
+  getWeekDay(language: 'es'): string;
   getWeekBegin(): Date;
   getFirstDay(): Date;
   getWeekEnd(): Date;
@@ -17,14 +19,19 @@ interface Date {
   nextYear(year: number): Date;
   previousYear(year: number): Date;
   getMonthName(): string;
-  getMonthName(language: 'pt-Br'): string;
+  getMonthName(language: 'pt-br'): string;
+  getMonthName(language: 'en'): string;
+  getMonthName(language: 'es'): string;
 }
 
 Date.prototype.getWeekDay = function () {
   let weekEng = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let weekEsp = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
   let weekPtBr = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
   let arg = arguments[0];
-  if (arg && arg === "pt-Br") return weekPtBr[this.getDay()];
+  if (arg && arg === "pt-br") return weekPtBr[this.getDay()];
+  if (arg && arg === "en") return weekEng[this.getDay()];
+  if (arg && arg === "es") return weekEsp[this.getDay()];
   return weekEng[this.getDay()];
 };
 
@@ -88,9 +95,12 @@ Date.prototype.previousYear = function (year: number) {
 
 Date.prototype.getMonthName = function () {
   let monthNameEng = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  let monthNameEsp = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
   let monthNamePtBr = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
   let arg = arguments[0];
-  if (arg && arg === "pt-Br") return monthNamePtBr[this.getMonth()];
+  if (arg && arg === "pt-br") return monthNamePtBr[this.getMonth()];
+  if (arg && arg === "en") return monthNameEng[this.getMonth()];
+  if (arg && arg === "es") return monthNameEsp[this.getMonth()];
   return monthNameEng[this.getMonth()];
 }
 
