@@ -85,6 +85,14 @@ myString = '';
 
 myString.splitToArray(2);                       // []
 
+myString = 'Hello World!';
+
+myString.toBase64(2);                           // []
+
+myString = 'SGVsbG8gV29ybGQh';
+
+myString.fromBase64(2);                         // []
+
 // Work with functions
 
 let firstString = '1';
