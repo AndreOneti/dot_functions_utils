@@ -23,95 +23,97 @@ npm i dot_functions_utils
 
 ``` javascript
 
-const { threeDigits, twoDigits } = require('dot_functions_utils');
+const { threeDigits, twoDigits, generateUniqueID  } = require('dot_functions_utils');
 
-var dateNow = new Date;               // 2020-04-13T14:09:02.649Z
+var dateNow = new Date;                           // 2020-04-13T14:09:02.649Z
 
 // Work with Dates
 
-console.log(dateNow.getWeekDay());              // Monday
-console.log(dateNow.getWeekDay('pt-Br'))        // Segunda
-console.log(dateNow.getFirstDay());             // 2020-04-01T03:00:00.000Z
-console.log(dateNow.getLastDay());              // 2020-04-30T03:00:00.000Z
-console.log(dateNow.getWeekEnd());              // 2020-04-18T14:09:02.649Z
-console.log(dateNow.getWeekBegin());            // 2020-04-12T14:09:02.649Z
-console.log(dateNow.nextDay(5));                // 2020-04-18T14:09:02.649Z
-console.log(dateNow.backDay(5));                // 2020-04-08T14:09:02.649Z
-console.log(dateNow.format());                  // '2020-04-13'
-console.log(dateNow.format('yyyy-mm-dd'));      // '2020-04-13'
-console.log(dateNow.format('dd-mm-yyyy'));      // '13-04-2020'
-console.log(dateNow.nextMonth(1));              // 2020-05-13T14:09:02.649Z
-console.log(dateNow.previousMonth(1));          // 2020-03-13T14:09:02.649Z
-console.log(dateNow.nextYear(1));               // 2021-04-13T14:09:02.649Z
-console.log(dateNow.previousYear(1));           // 2019-04-13T14:09:02.649Z
-console.log(dateNow.getMonthName());            // April
-console.log(dateNow.getMonthName('pt-Br'))      // Abril
+console.log(dateNow.getWeekDay());                // Monday
+console.log(dateNow.getWeekDay('pt-Br'))          // Segunda
+console.log(dateNow.getFirstDay());               // 2020-04-01T03:00:00.000Z
+console.log(dateNow.getLastDay());                // 2020-04-30T03:00:00.000Z
+console.log(dateNow.getWeekEnd());                // 2020-04-18T14:09:02.649Z
+console.log(dateNow.getWeekBegin());              // 2020-04-12T14:09:02.649Z
+console.log(dateNow.nextDay(5));                  // 2020-04-18T14:09:02.649Z
+console.log(dateNow.backDay(5));                  // 2020-04-08T14:09:02.649Z
+console.log(dateNow.format());                    // '2020-04-13'
+console.log(dateNow.format('yyyy-mm-dd'));        // '2020-04-13'
+console.log(dateNow.format('dd-mm-yyyy'));        // '13-04-2020'
+console.log(dateNow.nextMonth(1));                // 2020-05-13T14:09:02.649Z
+console.log(dateNow.previousMonth(1));            // 2020-03-13T14:09:02.649Z
+console.log(dateNow.nextYear(1));                 // 2021-04-13T14:09:02.649Z
+console.log(dateNow.previousYear(1));             // 2019-04-13T14:09:02.649Z
+console.log(dateNow.getMonthName());              // April
+console.log(dateNow.getMonthName('pt-Br'))        // Abril
 
 // Work with Arrays
 
 let list = [1, 2, 3, 4];
 let myList = [2, 3, 4];
 
-list.getLastElement();                          // 4
-list.getFirstElement();                         // 1
-list.getMiddleElement();                        // [2, 3]
-myList.getMiddleElement();                      // [3]
+list.getLastElement();                            // 4
+list.getFirstElement();                           // 1
+list.getMiddleElement();                          // [2, 3]
+myList.getMiddleElement();                        // [3]
 
 // Work with Strings
 
 let myFirstString = '1';
 
-myFirstString.twoDigits();                      // '01'
-myFirstString.threeDigits();                    // '001'
+myFirstString.twoDigits();                        // '01'
+myFirstString.threeDigits();                      // '001'
 
 let mySecondString = '11';
 
-mySecondString.twoDigits();                      // '11'
-mySecondString.threeDigits();                    // '011'
+mySecondString.twoDigits();                       // '11'
+mySecondString.threeDigits();                     // '011'
 
 let myThirdString = '123';
 
-myThirdString.twoDigits();                       // '123'
-myThirdString.threeDigits();                     // '123'
+myThirdString.twoDigits();                        // '123'
+myThirdString.threeDigits();                      // '123'
 
 let myFourthString = 'my string';
 
-myFourthString.captalize();                     // 'My string'
-myFourthString.captalizeAll();                  // 'My String'
+myFourthString.captalize();                       // 'My string'
+myFourthString.captalizeAll();                    // 'My String'
 
 let myString = 'my string';
 
-myFourthString.splitToArray(3);                 // [ 'my ', 'str', 'ing' ]
-myFourthString.splitToArray(2);                 // [ 'my', ' s', 'tr', 'in', 'g' ]
+myFourthString.splitToArray(3);                   // [ 'my ', 'str', 'ing' ]
+myFourthString.splitToArray(2);                   // [ 'my', ' s', 'tr', 'in', 'g' ]
 
 myString = '';
 
-myString.splitToArray(2);                       // []
+myString.splitToArray(2);                         // []
 
 myString = 'Hello World!';
 
-myString.toBase64(2);                           // []
+myString.toBase64(2);                             // []
 
 myString = 'SGVsbG8gV29ybGQh';
 
-myString.fromBase64(2);                         // []
+myString.fromBase64(2);                           // []
 
 // Work with functions
 
 let firstString = '1';
 
-twoDigits(firstString);                         // '01'
-threeDigits(firstString);                       // '001'
+twoDigits(firstString);                           // '01'
+threeDigits(firstString);                         // '001'
 
 let secondString = '11';
 
-twoDigits(secondString);                         // '11'
-threeDigits(secondString);                       // '011'
+twoDigits(secondString);                          // '11'
+threeDigits(secondString);                        // '011'
 
 let thirdString = '123';
 
-twoDigits(thirdString);                          // '123'
-threeDigits(thirdString);                        // '123'
+twoDigits(thirdString);                           // '123'
+threeDigits(thirdString);                         // '123'
+
+generateUniqueID ();                              // "3ace9a54-524e-c7df-9556-c97042413565"
 ```
 
 <br>

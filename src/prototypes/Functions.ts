@@ -10,3 +10,17 @@ export function threeDigits(digit: string | number) {
   else if (10 <= digit && digit < 100) return "0" + digit.toString();
   else return digit.toString();
 }
+
+export function generateUniqueID(): string {
+  let d = Date.now();
+  /* istanbul ignore next */
+  if (window.performance && typeof window.performance.now === 'function') {
+    d += performance.now();
+  }
+  const id = 'xxxxxxxx-xxxx-xxxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = (d + Math.random() * 16) % 16 | 0;
+    d = Math.floor(d / 16);
+    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+  });
+  return id;
+}
