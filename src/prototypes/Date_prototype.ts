@@ -2,6 +2,7 @@
 
 interface Date {
   getWeekDay(): string;
+  getWeekDay(language: 'pt-Br'): string;
   getWeekBegin(): Date;
   getFirstDay(): Date;
   getWeekEnd(): Date;
@@ -15,10 +16,15 @@ interface Date {
   previousMonth(month: number): Date;
   nextYear(year: number): Date;
   previousYear(year: number): Date;
+  getMonthName(): string;
+  getMonthName(language: 'pt-Br'): string;
 }
 
 Date.prototype.getWeekDay = function () {
-  const weekEng = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let weekEng = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let weekPtBr = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+  let arg = arguments[0];
+  if (arg && arg === "pt-Br") return weekPtBr[this.getDay()];
   return weekEng[this.getDay()];
 };
 
@@ -78,6 +84,14 @@ Date.prototype.nextYear = function (year: number) {
 Date.prototype.previousYear = function (year: number) {
   let dateNow = new Date(this);
   return new Date(dateNow.setFullYear(dateNow.getFullYear() - year));
+}
+
+Date.prototype.getMonthName = function () {
+  let monthNameEng = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  let monthNamePtBr = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+  let arg = arguments[0];
+  if (arg && arg === "pt-Br") return monthNamePtBr[this.getMonth()];
+  return monthNameEng[this.getMonth()];
 }
 
 function twoDigits(digit: string | number): string {

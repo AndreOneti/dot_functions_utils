@@ -2,11 +2,14 @@ import '../index';
 
 describe('Date prototype test', () => {
 
-  let dateNow = new Date;
+  let dateNow = new Date(2020, 3, 23);
 
-  it('should return is string equal Wednesday', async () => {
-    const weekEng = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    expect(dateNow.getWeekDay()).toBe(weekEng[dateNow.getDay()]);
+  it('should return is string equal Thursday', async () => {
+    expect(dateNow.getWeekDay()).toBe('Thursday');
+  });
+
+  it('should return is string equal Quinta', async () => {
+    expect(dateNow.getWeekDay('pt-Br')).toBe('Quinta');
   });
 
   dateNow = new Date;
@@ -85,4 +88,13 @@ describe('Date prototype test', () => {
     expect(dateNow.previousYear(1).toLocaleString()).toBe((new Date(dateNow.setFullYear(dateNow.getFullYear() - 1))).toLocaleString());
   });
 
+  dateNow = new Date(2020, 3, 23);
+
+  it('should return is string equal April', async () => {
+    expect(dateNow.getMonthName()).toBe('April');
+  });
+
+  it('should return is string equal Abril', async () => {
+    expect(dateNow.getMonthName('pt-Br')).toBe('Abril');
+  });
 });

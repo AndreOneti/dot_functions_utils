@@ -30,6 +30,7 @@ var dateNow = new Date;               // 2020-04-13T14:09:02.649Z
 // Work with Dates
 
 console.log(dateNow.getWeekDay());              // Monday
+console.log(dateNow.getWeekDay('pt-Br'))        // Segunda
 console.log(dateNow.getFirstDay());             // 2020-04-01T03:00:00.000Z
 console.log(dateNow.getLastDay());              // 2020-04-30T03:00:00.000Z
 console.log(dateNow.getWeekEnd());              // 2020-04-18T14:09:02.649Z
@@ -43,6 +44,8 @@ console.log(dateNow.nextMonth(1));              // 2020-05-13T14:09:02.649Z
 console.log(dateNow.previousMonth(1));          // 2020-03-13T14:09:02.649Z
 console.log(dateNow.nextYear(1));               // 2021-04-13T14:09:02.649Z
 console.log(dateNow.previousYear(1));           // 2019-04-13T14:09:02.649Z
+console.log(dateNow.getMonthName());            // April
+console.log(dateNow.getMonthName('pt-Br'))      // Abril
 
 // Work with Arrays
 
