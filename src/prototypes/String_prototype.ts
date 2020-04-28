@@ -43,9 +43,21 @@ String.prototype.splitToArray = function (minLength: number) {
 }
 
 String.prototype.toBase64 = function () {
-  return Buffer.from(this).toString('base64');
+  try {
+    /* istanbul ignore next */
+    return window.btoa(this.toString());
+  } catch (error) {
+    /* istanbul ignore next */
+    return Buffer.from(this).toString('base64');
+  }
 }
 
 String.prototype.fromBase64 = function () {
-  return Buffer.from(this.toString(), 'base64').toString();
+  try {
+    /* istanbul ignore next */
+    return window.atob(this.toString());
+  } catch (error) {
+    /* istanbul ignore next */
+    return Buffer.from(this.toString(), 'base64').toString();
+  }
 }

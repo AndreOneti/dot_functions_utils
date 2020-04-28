@@ -13,10 +13,12 @@ export function threeDigits(digit: string | number) {
 
 export function generateUniqueID(): string {
   let d = Date.now();
-  /* istanbul ignore next */
-  if (window.performance && typeof window.performance.now === 'function') {
-    d += performance.now();
-  }
+  try {
+    /* istanbul ignore next */
+    if (window.performance && typeof window.performance.now === 'function') {
+      d += performance.now();
+    }
+  } catch (error) { }
   const id = 'xxxxxxxx-xxxx-xxxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
     const r = (d + Math.random() * 16) % 16 | 0;
     d = Math.floor(d / 16);

@@ -105,11 +105,11 @@ myString.splitToArray(2);                         // []
 
 myString = 'Hello World!';
 
-myString.toBase64(2);                             // 'SGVsbG8gV29ybGQh'
+myString.toBase64();                              // 'SGVsbG8gV29ybGQh'
 
 myString = 'SGVsbG8gV29ybGQh';
 
-myString.fromBase64(2);                           // 'Hello World!'
+myString.fromBase64();                            // 'Hello World!'
 
 ```
 
