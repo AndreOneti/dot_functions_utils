@@ -6,6 +6,7 @@ interface String {
   splitToArray(minLength: number): string[];
   toBase64(): string;
   fromBase64(): string;
+  decapitalize(): string;
 }
 
 String.prototype.twoDigits = function () {
@@ -60,4 +61,9 @@ String.prototype.fromBase64 = function () {
     /* istanbul ignore next */
     return Buffer.from(this.toString(), 'base64').toString();
   }
+}
+
+String.prototype.decapitalize = function () {
+  let [first, ...rest] = this.split('');
+  return first.toLowerCase() + rest.join('');
 }

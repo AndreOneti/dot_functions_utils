@@ -111,6 +111,10 @@ myString = 'SGVsbG8gV29ybGQh';
 
 myString.fromBase64();                            // 'Hello World!'
 
+myString = 'Hello World!';
+
+myString.decapitalize();                          // 'hello World!'
+
 ```
 
 <hr>

@@ -58,4 +58,11 @@ describe('String prototype test', () => {
     expect('SGVsbG8gV29ybGQh'.fromBase64()).toBe('Hello World!');
   });
 
+  it('should return decapitalizede string', async () => {
+    expect('Andre Carvalho'.decapitalize()).toBe('andre Carvalho');
+  });
+
+  it('should return decapitalizede string', async () => {
+    expect('ANDRE Carvalho'.decapitalize()).toBe('aNDRE Carvalho');
+  });
 });
