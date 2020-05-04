@@ -113,4 +113,9 @@ describe('Date prototype test', () => {
   it('should return is string equal Abril', async () => {
     expect(dateNow.getMonthName('es')).toBe('Abril');
   });
+
+  it('should return is the day number of year', async () => {
+    dateNow = new Date(2020, 3, 23);
+    expect(dateNow.getDayOfYear()).toBe(114);
+  });
 });

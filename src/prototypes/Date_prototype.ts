@@ -22,6 +22,7 @@ interface Date {
   getMonthName(language: 'pt-br'): string;
   getMonthName(language: 'en'): string;
   getMonthName(language: 'es'): string;
+  getDayOfYear(): number;
 }
 
 Date.prototype.getWeekDay = function () {
@@ -102,6 +103,15 @@ Date.prototype.getMonthName = function () {
   if (arg && arg === "en") return monthNameEng[this.getMonth()];
   if (arg && arg === "es") return monthNameEsp[this.getMonth()];
   return monthNameEng[this.getMonth()];
+}
+
+Date.prototype.getDayOfYear = function () {
+  let now = this.getTime();
+  let start = (new Date(this.getFullYear(), 0, 0)).getTime();
+  let diff = now - start;
+  let oneDay = 1000 * 60 * 60 * 24;
+  let day = Math.floor(diff / oneDay);
+  return day;
 }
 
 function twoDigits(digit: string | number): string {

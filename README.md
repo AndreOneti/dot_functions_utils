@@ -26,27 +26,28 @@ require('dot_functions_utils');
 
 var dateNow = new Date;                           // 2020-04-13T14:09:02.649Z
 
-console.log(dateNow.getWeekDay());                // Monday
-console.log(dateNow.getWeekDay('eng'));           // Monday
-console.log(dateNow.getWeekDay('es'));            // Lunes
-console.log(dateNow.getWeekDay('pt-br'));         // Segunda
-console.log(dateNow.getFirstDay());               // 2020-04-01T03:00:00.000Z
-console.log(dateNow.getLastDay());                // 2020-04-30T03:00:00.000Z
-console.log(dateNow.getWeekEnd());                // 2020-04-18T14:09:02.649Z
-console.log(dateNow.getWeekBegin());              // 2020-04-12T14:09:02.649Z
-console.log(dateNow.nextDay(5));                  // 2020-04-18T14:09:02.649Z
-console.log(dateNow.backDay(5));                  // 2020-04-08T14:09:02.649Z
-console.log(dateNow.format());                    // '2020-04-13'
-console.log(dateNow.format('yyyy-mm-dd'));        // '2020-04-13'
-console.log(dateNow.format('dd-mm-yyyy'));        // '13-04-2020'
-console.log(dateNow.nextMonth(1));                // 2020-05-13T14:09:02.649Z
-console.log(dateNow.previousMonth(1));            // 2020-03-13T14:09:02.649Z
-console.log(dateNow.nextYear(1));                 // 2021-04-13T14:09:02.649Z
-console.log(dateNow.previousYear(1));             // 2019-04-13T14:09:02.649Z
-console.log(dateNow.getMonthName());              // April
-console.log(dateNow.getMonthName('eng'));         // April
-console.log(dateNow.getMonthName('es'));          // Abril
-console.log(dateNow.getMonthName('pt-br'));       // Abril
+dateNow.getWeekDay();                             // Monday
+dateNow.getWeekDay('eng');                        // Monday
+dateNow.getWeekDay('es');                         // Lunes
+dateNow.getWeekDay('pt-br');                      // Segunda
+dateNow.getFirstDay();                            // 2020-04-01T03:00:00.000Z
+dateNow.getLastDay();                             // 2020-04-30T03:00:00.000Z
+dateNow.getWeekEnd();                             // 2020-04-18T14:09:02.649Z
+dateNow.getWeekBegin();                           // 2020-04-12T14:09:02.649Z
+dateNow.nextDay(5);                               // 2020-04-18T14:09:02.649Z
+dateNow.backDay(5);                               // 2020-04-08T14:09:02.649Z
+dateNow.format();                                 // '2020-04-13'
+dateNow.format('yyyy-mm-dd');                     // '2020-04-13'
+dateNow.format('dd-mm-yyyy');                     // '13-04-2020'
+dateNow.nextMonth(1);                             // 2020-05-13T14:09:02.649Z
+dateNow.previousMonth(1);                         // 2020-03-13T14:09:02.649Z
+dateNow.nextYear(1);                              // 2021-04-13T14:09:02.649Z
+dateNow.previousYear(1);                          // 2019-04-13T14:09:02.649Z
+dateNow.getMonthName();                           // April
+dateNow.getMonthName('eng');                      // April
+dateNow.getMonthName('es');                       // Abril
+dateNow.getMonthName('pt-br');                    // Abril
+dateNow.getDayOfYear();                           // 105
 
 ```
 
