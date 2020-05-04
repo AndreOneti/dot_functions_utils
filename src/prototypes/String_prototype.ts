@@ -25,11 +25,8 @@ String.prototype.captalize = function () {
 }
 
 String.prototype.captalizeAll = function () {
-  let array = this.split(' '), finalString = '';
-  array.forEach(letter => {
-    finalString += `${letter.substr(0, 1).toUpperCase() + letter.substr(1).toLowerCase()} `;
-  });
-  return finalString.trim();
+  let finalString = this.trim();
+  return finalString.replace(/\b[a-z]/g, char => char.toUpperCase());
 }
 
 String.prototype.splitToArray = function (minLength: number) {
