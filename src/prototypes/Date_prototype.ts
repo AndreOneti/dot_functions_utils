@@ -68,7 +68,7 @@ Date.prototype.backDay = function (day: number) {
 
 Date.prototype.format = function () {
   let day = this.getDate();
-  let month = this.getMonth();
+  let month = this.getMonth() + 1;
   let year = this.getFullYear();
   let arg = arguments[0];
   if (arg && arg === "yyyy-mm-dd") return `${year}-${twoDigits(month)}-${twoDigits(day)}`;
