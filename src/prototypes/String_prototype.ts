@@ -7,6 +7,7 @@ interface String {
   toBase64(): string;
   fromBase64(): string;
   decapitalize(): string;
+  reverse(): string;
 }
 
 String.prototype.twoDigits = function () {
@@ -63,4 +64,8 @@ String.prototype.fromBase64 = function () {
 String.prototype.decapitalize = function () {
   let [first, ...rest] = this.split('');
   return first.toLowerCase() + rest.join('');
+}
+
+String.prototype.reverse = function () {
+  return this.split("").reverse().join("");
 }

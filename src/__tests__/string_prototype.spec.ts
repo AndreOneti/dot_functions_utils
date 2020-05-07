@@ -65,4 +65,8 @@ describe('String prototype test', () => {
   it('should return decapitalizede string', async () => {
     expect('ANDRE Carvalho'.decapitalize()).toBe('aNDRE Carvalho');
   });
+
+  it('should return "hello world" as reversed string', async () => {
+    expect("hello world".reverse()).toBe("dlrow olleh");
+  });
 });

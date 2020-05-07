@@ -118,6 +118,8 @@ myString = 'Hello World!';
 
 myString.decapitalize();                          // 'hello World!'
 
+myString.reverse();                               // '!dlrow olleh'
+
 ```
 
 <hr>
