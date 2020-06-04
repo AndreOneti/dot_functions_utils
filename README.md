@@ -41,6 +41,7 @@ dateNow.format('yyyy-mm-dd');                     // '2020-04-13'
 dateNow.format('dd-mm-yyyy');                     // '13-04-2020'
 dateNow.format('dd/mm/yyyy');                     // '13/04/2020'
 dateNow.format('yyyy/mm/dd');                     // '2020/04/13'
+dateNow.format('dd/mm/yyyy - hh:mm:ss');          // '13/04/2020 - 14:09:02'
 dateNow.nextMonth(1);                             // 2020-05-13T14:09:02.649Z
 dateNow.previousMonth(1);                         // 2020-03-13T14:09:02.649Z
 dateNow.nextYear(1);                              // 2021-04-13T14:09:02.649Z

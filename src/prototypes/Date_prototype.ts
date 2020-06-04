@@ -16,6 +16,7 @@ interface Date {
   format(type: "dd-mm-yyyy"): string;
   format(type: "yyyy/mm/dd"): string;
   format(type: "dd/mm/yyyy"): string;
+  format(type: "dd/mm/yyyy - hh:mm:ss"): string;
   nextMonth(month: number): Date;
   previousMonth(month: number): Date;
   nextYear(year: number): Date;
@@ -70,11 +71,15 @@ Date.prototype.format = function () {
   let day = this.getDate();
   let month = this.getMonth() + 1;
   let year = this.getFullYear();
+  let hour = this.getHours().toString().twoDigits();
+  let minute = this.getMinutes().toString().twoDigits();
+  let second = this.getSeconds().toString().twoDigits();
   let arg = arguments[0];
   if (arg && arg === "yyyy-mm-dd") return `${year}-${twoDigits(month)}-${twoDigits(day)}`;
   if (arg && arg === "dd-mm-yyyy") return `${twoDigits(day)}-${twoDigits(month)}-${year}`;
   if (arg && arg === "yyyy/mm/dd") return `${year}/${twoDigits(month)}/${twoDigits(day)}`;
   if (arg && arg === "dd/mm/yyyy") return `${twoDigits(day)}/${twoDigits(month)}/${year}`;
+  if (arg && arg === "dd/mm/yyyy - hh:mm:ss") return `${twoDigits(day)}/${twoDigits(month)}/${year} - ${hour}:${minute}:${second}`;
   return `${year}-${twoDigits(month)}-${twoDigits(day)}`;
 };
 

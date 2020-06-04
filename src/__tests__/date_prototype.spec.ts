@@ -82,6 +82,11 @@ describe('Date prototype test', () => {
     expect(dateNow.format('yyyy/mm/dd')).toEqual(expect.stringMatching(expectedBySlashReverse));
   });
 
+  const dateHour = /[0-9]{2}\/[0-9]{2}\/[0-9]{4} - [0-9]{2}:[0-9]{2}:[0-9]{2}/;
+  it('should return is String on format "dd/mm/yyyy - HH:MM:SS"', async () => {
+    expect(dateNow.format('dd/mm/yyyy - hh:mm:ss')).toEqual(expect.stringMatching(dateHour));
+  });
+
   dateNow = new Date;
 
   it('should return the date in 1 month ahead', async () => {
