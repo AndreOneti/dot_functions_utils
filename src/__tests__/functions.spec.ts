@@ -1,4 +1,4 @@
-import { threeDigits, twoDigits, generateUniqueID } from '../index';
+import { threeDigits, twoDigits, generateUniqueID, log } from '../index';
 
 describe('Functions test', () => {
 
@@ -25,5 +25,9 @@ describe('Functions test', () => {
   const regex = /(([0-9]|[a-z]){8}-([0-9]|[a-z]){4}-([0-9]|[a-z]){4}-([0-9]|[a-z]){4}-([0-9]|[a-z]){12})/;
   it('should return unique ID', async () => {
     expect(generateUniqueID()).toEqual(expect.stringMatching(regex));
+  });
+
+  it("should log message", () => {
+    expect(log("Hello", "Debug")).toBe(undefined);
   });
 });
