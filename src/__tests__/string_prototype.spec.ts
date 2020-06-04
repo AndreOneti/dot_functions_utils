@@ -51,11 +51,11 @@ describe('String prototype test', () => {
   });
 
   it('should return encoded strings', async () => {
-    expect('Hello World!'.toBase64()).toBe('SGVsbG8gV29ybGQh');
+    expect('Hello World!'.encodeBase64()).toBe('SGVsbG8gV29ybGQh');
   });
 
   it('should return dencoded strings', async () => {
-    expect('SGVsbG8gV29ybGQh'.fromBase64()).toBe('Hello World!');
+    expect('SGVsbG8gV29ybGQh'.decodeBase64()).toBe('Hello World!');
   });
 
   it('should return decapitalizede string', async () => {

@@ -4,8 +4,8 @@ interface String {
   threeDigits(): string;
   captalizeAll(): string;
   splitToArray(minLength: number): string[];
-  toBase64(): string;
-  fromBase64(): string;
+  encodeBase64(): string;
+  decodeBase64(): string;
   decapitalize(): string;
   reverse(): string;
 }
@@ -41,7 +41,7 @@ String.prototype.splitToArray = function (minLength: number) {
   return array;
 }
 
-String.prototype.toBase64 = function () {
+String.prototype.encodeBase64 = function () {
   try {
     /* istanbul ignore next */
     return window.btoa(this.toString());
@@ -51,7 +51,7 @@ String.prototype.toBase64 = function () {
   }
 }
 
-String.prototype.fromBase64 = function () {
+String.prototype.decodeBase64 = function () {
   try {
     /* istanbul ignore next */
     return window.atob(this.toString());
