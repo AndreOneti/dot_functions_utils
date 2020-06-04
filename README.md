@@ -127,7 +127,7 @@ myString.reverse();                               // '!dlrow olleh'
 ### Functions
 
 ``` javascript
-const { threeDigits, twoDigits, generateUniqueID  } = require('dot_functions_utils');
+const { threeDigits, twoDigits, generateUniqueID, log } = require('dot_functions_utils');
 
 let firstString = '1';
 
@@ -145,6 +145,10 @@ twoDigits(thirdString);                           // '123'
 threeDigits(thirdString);                         // '123'
 
 generateUniqueID ();                              // "3ace9a54-524e-c7df-9556-c97042413565"
+
+log("My string|object", "Debug");                 // [ 04/06/2020 - 18:45:50 - Debug ] > "My string|object"
+
+log({"name":"Jhon"}, "Debug");                    // [ 04/06/2020 - 18:45:50 - Debug ] > {"name":"Jhon"}
 ```
 
 <br>
