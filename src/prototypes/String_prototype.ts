@@ -9,6 +9,7 @@ interface String {
   decapitalize(): string;
   reverse(): string;
   toJson(): object | string;
+  log(): string;
 }
 
 String.prototype.twoDigits = function () {
@@ -77,4 +78,9 @@ String.prototype.toJson = function () {
   } catch (error) {
     return this;
   }
+}
+
+String.prototype.log = function () {
+  console.log(`[${(new Date()).format('dd/mm/yyyy - hh:mm:ss')}] > `, "" + this);
+  return "" + this;
 }

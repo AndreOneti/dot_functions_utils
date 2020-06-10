@@ -77,4 +77,8 @@ describe('String prototype test', () => {
   it('should return object', async () => {
     expect('{ "name": "John Doe" }'.toJson()).toEqual({ "name": "John Doe" });
   });
+
+  it('should return string and log on console', async () => {
+    expect('Hello wolrd'.log()).toBe("Hello wolrd");
+  });
 });

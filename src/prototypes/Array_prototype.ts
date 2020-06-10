@@ -4,6 +4,7 @@ interface Array<T> {
   getLastElement(): string;
   getFirstElement(): string;
   getMiddleElement(): Array<T> | null;
+  log(): Array<T>;
 }
 
 Array.prototype.getLastElement = function () {
@@ -34,3 +35,8 @@ Array.prototype.getMiddleElement = function () {
   });
   return elements;
 };
+
+Array.prototype.log = function () {
+  console.log(`[${(new Date()).format('dd/mm/yyyy - hh:mm:ss')}] > `, this);
+  return this;
+}

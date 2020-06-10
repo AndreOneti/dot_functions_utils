@@ -34,4 +34,7 @@ describe('Array tests', () => {
     expect([].getMiddleElement()).toEqual(null);
   });
 
+  it('should return array and log on console', async () => {
+    expect([1].log()).toEqual([1]);
+  });
 });

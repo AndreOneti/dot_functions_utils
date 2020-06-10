@@ -51,6 +51,7 @@ dateNow.getMonthName('eng');                      // April
 dateNow.getMonthName('es');                       // Abril
 dateNow.getMonthName('pt-br');                    // Abril
 dateNow.getDayOfYear();                           // 105
+dateNow.log();                                    // log - [10/06/2020 - 19:48:56] >  2020-04-13T14:09:02.649Z | return 2020-04-13T14:09:02.649Z
 
 ```
 
@@ -68,6 +69,7 @@ list.getLastElement();                            // 4
 list.getFirstElement();                           // 1
 list.getMiddleElement();                          // [2, 3]
 myList.getMiddleElement();                        // [3]
+myList.log();                                     // log - [10/06/2020 - 19:48:56] >  [2, 3, 4] | return [2, 3, 4]
 
 ```
 
@@ -128,6 +130,21 @@ myString.toJson();                                // { "name": "John Doe" }
 myString = "hello world"
 
 myString.toJson();                                // "hello world"
+
+myList.log();                                     // log - [10/06/2020 - 19:48:56] >  "hello world" | return "hello world"
+
+```
+
+<hr>
+
+### Number
+
+``` javascript
+require('dot_functions_utils');
+
+let myNumber = 1500;
+
+myNumber.log();                                   // log - [10/06/2020 - 19:48:56] >  1500 | return 1500
 
 ```
 

@@ -26,6 +26,7 @@ interface Date {
   getMonthName(language: 'en'): string;
   getMonthName(language: 'es'): string;
   getDayOfYear(): number;
+  log():Date;
 }
 
 Date.prototype.getWeekDay = function () {
@@ -126,4 +127,9 @@ Date.prototype.getDayOfYear = function () {
 function twoDigits(digit: string | number): string {
   if (0 <= digit && digit < 10) return "0" + digit.toString();
   return digit.toString();
+}
+
+Date.prototype.log = function () {
+  console.log(`[${(new Date()).format('dd/mm/yyyy - hh:mm:ss')}] > `, this);
+  return this;
 }

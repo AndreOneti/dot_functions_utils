@@ -133,4 +133,9 @@ describe('Date prototype test', () => {
     dateNow = new Date(2020, 3, 23);
     expect(dateNow.getDayOfYear()).toBe(114);
   });
+
+  it('should return array and log on console', async () => {
+    dateNow = new Date(2020, 3, 23);
+    expect(dateNow.log()).toBe(dateNow);
+  });
 });
