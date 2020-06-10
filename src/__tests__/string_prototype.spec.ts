@@ -69,4 +69,12 @@ describe('String prototype test', () => {
   it('should return "hello world" as reversed string', async () => {
     expect("hello world".reverse()).toBe("dlrow olleh");
   });
+
+  it('should return string', async () => {
+    expect("hello world".toJson()).toBe("hello world");
+  });
+
+  it('should return object', async () => {
+    expect('{ "name": "John Doe" }'.toJson()).toEqual({ "name": "John Doe" });
+  });
 });

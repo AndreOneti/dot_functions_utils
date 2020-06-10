@@ -8,6 +8,7 @@ interface String {
   decodeBase64(): string;
   decapitalize(): string;
   reverse(): string;
+  toJson(): object | string;
 }
 
 String.prototype.twoDigits = function () {
@@ -68,4 +69,12 @@ String.prototype.decapitalize = function () {
 
 String.prototype.reverse = function () {
   return this.split("").reverse().join("");
+}
+
+String.prototype.toJson = function () {
+  try {
+    return JSON.parse('' + this);
+  } catch (error) {
+    return this;
+  }
 }

@@ -121,6 +121,14 @@ myString.decapitalize();                          // 'hello World!'
 
 myString.reverse();                               // '!dlrow olleh'
 
+myString = '{ "name": "John Doe" }'
+
+myString.toJson();                                // { "name": "John Doe" }
+
+myString = "hello world"
+
+myString.toJson();                                // "hello world"
+
 ```
 
 <hr>
