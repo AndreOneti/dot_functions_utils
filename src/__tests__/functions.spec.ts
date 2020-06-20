@@ -32,9 +32,11 @@ describe('Functions test', () => {
   });
 
   it("should wait a second", async () => {
-    let timeNow = (new Date).getTime();
+    let timeInit = (new Date).getTime();
     let seconds = 10;
     await waitFor(seconds);
-    expect((new Date).getTime() - timeNow).toBeGreaterThanOrEqual(seconds);
+    let timeNow = (new Date).getTime();
+    expect(timeNow - timeInit).toBeGreaterThanOrEqual(seconds);
+    console.log("Time: ", timeNow - timeInit);
   });
 });

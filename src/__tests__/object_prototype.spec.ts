@@ -1,6 +1,6 @@
 import '../index';
 
-describe('Date prototype test', () => {
+describe('Object prototype test', () => {
 
   let obj = {
     name: "Jhon",
