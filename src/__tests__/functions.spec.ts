@@ -1,4 +1,4 @@
-import { threeDigits, twoDigits, generateUniqueID, log } from '../index';
+import { threeDigits, twoDigits, generateUniqueID, log, waitFor } from '../index';
 
 describe('Functions test', () => {
 
@@ -29,5 +29,12 @@ describe('Functions test', () => {
 
   it("should log message", () => {
     expect(log("Hello", "Debug")).toBe(undefined);
+  });
+
+  it("should wait a second", async () => {
+    let timeNow = (new Date).getTime();
+    let seconds = 10;
+    await waitFor(seconds);
+    expect((new Date).getTime() - timeNow).toBeGreaterThanOrEqual(seconds);
   });
 });

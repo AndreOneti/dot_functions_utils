@@ -34,3 +34,9 @@ export function log(message: any, level: "Error" | "Debug" | "OK"): void {
   let second = data.getSeconds().toString().twoDigits();
   console.log(`[ ${(new Date()).format('dd/mm/yyyy')} - ${hour}:${minute}:${second} - ${level} ] > `, message);
 }
+
+export function waitFor(ms: number) {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, ms);
+  });
+}

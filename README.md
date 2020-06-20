@@ -169,7 +169,7 @@ obj.log();                                   // log - [10/06/2020 - 19:48:56] > 
 ### Functions
 
 ``` javascript
-const { threeDigits, twoDigits, generateUniqueID, log } = require('dot_functions_utils');
+const { threeDigits, twoDigits, generateUniqueID, log, waitFor } = require('dot_functions_utils');
 
 let firstString = '1';
 
@@ -191,6 +191,13 @@ generateUniqueID ();                              // "3ace9a54-524e-c7df-9556-c9
 log("My string|object", "Debug");                 // [ 04/06/2020 - 18:45:50 - Debug ] > "My string|object"
 
 log({"name":"Jhon"}, "Debug");                    // [ 04/06/2020 - 18:45:50 - Debug ] > {"name":"Jhon"}
+
+let timeNow = (new Date).getTime();               // 2020-06-20T09:05:30.649Z
+let seconds = 10;
+(async ()=>{
+  await waitFor(seconds);                         // 2020-06-20T09:05:40.895Z
+})()
+
 ```
 
 <br>
