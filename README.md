@@ -150,6 +150,22 @@ myNumber.log();                                   // log - [10/06/2020 - 19:48:5
 
 <hr>
 
+### Number
+
+``` javascript
+require('dot_functions_utils');
+
+  let obj = {
+    name: "Jhon",
+    lastName: "Doe"
+  }
+
+obj.log();                                   // log - [10/06/2020 - 19:48:56] >  { name: "Jhon", lastName: "Doe" } | return { name: "Jhon", lastName: "Doe" }
+
+```
+
+<hr>
+
 ### Functions
 
 ``` javascript
