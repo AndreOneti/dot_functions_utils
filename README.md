@@ -166,7 +166,11 @@ require('dot_functions_utils');
     lastName: "Doe"
   }
 
-obj.log();                                   // log - [10/06/2020 - 19:48:56] >  { name: "Jhon", lastName: "Doe" } | return { name: "Jhon", lastName: "Doe" }
+obj.log();                                        // log - [10/06/2020 - 19:48:56] >  { name: "Jhon", lastName: "Doe" } | return { name: "Jhon", lastName: "Doe" }
+
+obj.compare({ name: "Jhon", lastName: "Doe" });   // true
+
+obj.compare({ name: "Jane", lastName: "Doe" });   // false
 
 ```
 
