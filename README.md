@@ -60,7 +60,7 @@ dateNow.log();                                    // log - [10/06/2020 - 19:48:5
 ### Arrays
 
 ``` javascript
-require('dot_functions_utils');
+const { waitFor } = require('dot_functions_utils');
 
 let list = [1, 2, 3, 4];
 let myList = [2, 3, 4];
@@ -70,6 +70,12 @@ list.getFirstElement();                           // 1
 list.getMiddleElement();                          // [2, 3]
 myList.getMiddleElement();                        // [3]
 myList.log();                                     // log - [10/06/2020 - 19:48:56] >  [2, 3, 4] | return [2, 3, 4]
+myList.forEachSync(
+  async (elemente, index, array) => {
+    await waitFor(1);
+    console.log(elemente);                        // log on console the elements after 1 second
+  }
+);
 
 ```
 
@@ -150,7 +156,7 @@ myNumber.log();                                   // log - [10/06/2020 - 19:48:5
 
 <hr>
 
-### Number
+### Object
 
 ``` javascript
 require('dot_functions_utils');

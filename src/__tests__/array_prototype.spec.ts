@@ -1,4 +1,4 @@
-import '../index';
+import { waitFor } from '../index';
 
 describe('Array tests', () => {
   const firstList = [1, 2, 3];
@@ -36,5 +36,18 @@ describe('Array tests', () => {
 
   it('should return array and log on console', async () => {
     expect([1].log()).toEqual([1]);
+  });
+
+  it('should return array afte execution', async () => {
+    let time = 1;
+    let array = [1, 2, 3];
+    let timeInit = (new Date).getTime();
+    array.forEachSync(async (elemente) => {
+      await waitFor(1);
+      let timeNow = (new Date).getTime();
+      expect(timeInit - timeNow).toEqual(time);
+      expect(elemente).toEqual(time);
+      time++;
+    });
   });
 });
