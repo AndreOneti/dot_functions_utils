@@ -52,6 +52,7 @@ dateNow.getMonthName('es');                       // Abril
 dateNow.getMonthName('pt-br');                    // Abril
 dateNow.getDayOfYear();                           // 105
 dateNow.log();                                    // log - [10/06/2020 - 19:48:56] >  2020-04-13T14:09:02.649Z | return 2020-04-13T14:09:02.649Z
+dateNow.log("Date");                              // log - [10/06/2020 - 19:48:56] (Date) >  2020-04-13T14:09:02.649Z | return 2020-04-13T14:09:02.649Z
 
 ```
 
@@ -70,6 +71,7 @@ list.getFirstElement();                           // 1
 list.getMiddleElement();                          // [2, 3]
 myList.getMiddleElement();                        // [3]
 myList.log();                                     // log - [10/06/2020 - 19:48:56] >  [2, 3, 4] | return [2, 3, 4]
+myList.log("Array");                              // log - [10/06/2020 - 19:48:56] (Array) >  [2, 3, 4] | return [2, 3, 4]
 myList.forEachSync(
   async (elemente, index, array) => {
     await waitFor(1);
@@ -137,7 +139,9 @@ myString = "hello world"
 
 myString.toJson();                                // "hello world"
 
-myList.log();                                     // log - [10/06/2020 - 19:48:56] >  "hello world" | return "hello world"
+myString.log();                                   // log - [10/06/2020 - 19:48:56] >  "hello world" | return "hello world"
+
+myString.log("String");                           // log - [10/06/2020 - 19:48:56] (String) >  "hello world" | return "hello world"
 
 ```
 
@@ -151,6 +155,8 @@ require('dot_functions_utils');
 let myNumber = 1500;
 
 myNumber.log();                                   // log - [10/06/2020 - 19:48:56] >  1500 | return 1500
+
+myNumber.log("Number");                           // log - [10/06/2020 - 19:48:56] (Number) >  1500 | return 1500
 
 let myFirstNumber = 1;
 

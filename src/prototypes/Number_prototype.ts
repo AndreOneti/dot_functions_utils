@@ -2,12 +2,15 @@
 
 interface Number {
   log(): number;
+  log(msg: string): number;
   twoDigits(): string;
   threeDigits(): string;
 }
 
 Number.prototype.log = function () {
-  console.log(`[${(new Date()).format('dd/mm/yyyy - hh:mm:ss')}] > `, + this);
+  /* istanbul ignore next */
+  let arg = arguments[0];
+  console.log("[ " + (new Date()).format('dd/mm/yyyy - hh:mm:ss') + " ] " + (arg ? ("(" + arg + ") ") : "") + "> ", "" + this);
   return + this;
 }
 

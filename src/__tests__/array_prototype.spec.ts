@@ -38,6 +38,10 @@ describe('Array tests', () => {
     expect([1].log()).toEqual([1]);
   });
 
+  it('should return array and log on console', async () => {
+    expect([1].log("Array")).toEqual([1]);
+  });
+
   it('should return array afte execution', async () => {
     let time = 1;
     let array = [1, 2, 3];

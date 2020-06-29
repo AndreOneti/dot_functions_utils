@@ -28,11 +28,7 @@ export function generateUniqueID(): string {
 }
 
 export function log(message: any, level: "Error" | "Debug" | "OK"): void {
-  let data = new Date();
-  let hour = data.getHours().toString().twoDigits();
-  let minute = data.getMinutes().toString().twoDigits();
-  let second = data.getSeconds().toString().twoDigits();
-  console.log(`[ ${(new Date()).format('dd/mm/yyyy')} - ${hour}:${minute}:${second} - ${level} ] > `, message);
+  console.log(`[ ${(new Date()).format('dd/mm/yyyy - hh:mm:ss')} ] > `, message);
 }
 
 export function waitFor(ms: number) {

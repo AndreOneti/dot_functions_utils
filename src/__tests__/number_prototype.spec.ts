@@ -6,6 +6,10 @@ describe('Date prototype test', () => {
     expect((25).log()).toBe(25);
   });
 
+  it('should return number and log on console', async () => {
+    expect((25).log("Number")).toBe(25);
+  });
+
   it('should return string 01', async () => {
     expect((1).twoDigits()).toBe("01");
   });

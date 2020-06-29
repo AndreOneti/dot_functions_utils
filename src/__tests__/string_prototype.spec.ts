@@ -82,3 +82,7 @@ describe('String prototype test', () => {
     expect('Hello wolrd'.log()).toBe("Hello wolrd");
   });
 });
+
+it('should return string and log on console', async () => {
+  expect('Hello wolrd'.log("OK")).toBe("Hello wolrd");
+});

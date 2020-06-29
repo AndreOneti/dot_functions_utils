@@ -5,6 +5,7 @@ interface Array<T> {
   getFirstElement(): string;
   getMiddleElement(): Array<T> | null;
   log(): Array<T>;
+  log(msg: string): Array<T>;
   forEachSync(callback: (element: any, index: number, array: this) => Promise<any>): void;
 }
 
@@ -38,7 +39,9 @@ Array.prototype.getMiddleElement = function () {
 };
 
 Array.prototype.log = function () {
-  console.log(`[${(new Date()).format('dd/mm/yyyy - hh:mm:ss')}] > `, this);
+  /* istanbul ignore next */
+  let arg = arguments[0];
+  console.log("[ " + (new Date()).format('dd/mm/yyyy - hh:mm:ss') + " ] " + (arg ? ("(" + arg + ") ") : "") + "> ", this);
   return this;
 }
 

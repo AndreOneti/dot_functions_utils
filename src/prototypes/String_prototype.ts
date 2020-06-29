@@ -10,6 +10,7 @@ interface String {
   reverse(): string;
   toJson(): object | string;
   log(): string;
+  log(msg: string): string;
 }
 
 String.prototype.twoDigits = function () {
@@ -81,6 +82,8 @@ String.prototype.toJson = function () {
 }
 
 String.prototype.log = function () {
-  console.log(`[${(new Date()).format('dd/mm/yyyy - hh:mm:ss')}] > `, "" + this);
+  /* istanbul ignore next */
+  let arg = arguments[0];
+  console.log("[ " + (new Date()).format('dd/mm/yyyy - hh:mm:ss') + " ] " + (arg ? ("(" + arg + ") ") : "") + "> ", "" + this);
   return "" + this;
 }
