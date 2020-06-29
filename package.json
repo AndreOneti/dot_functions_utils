@@ -1,6 +1,6 @@
 {
   "name": "dot_functions_utils",
-  "version": "1.22.1",
+  "version": "1.22.2",
   "description": "To help on work with Dates, Arrays and Strings",
   "main": "dist/index.js",
   "repository": {

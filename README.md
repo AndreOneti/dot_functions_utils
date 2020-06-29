@@ -152,6 +152,26 @@ let myNumber = 1500;
 
 myNumber.log();                                   // log - [10/06/2020 - 19:48:56] >  1500 | return 1500
 
+let myFirstNumber = 1;
+
+myFirstNumber.twoDigits();                        // '01'
+myFirstNumber.threeDigits();                      // '001'
+
+let mySecondNumber = 11;
+
+mySecondNumber.twoDigits();                       // '11'
+mySecondNumber.threeDigits();                     // '011'
+
+let myThirdNumber = 123;
+
+myThirdNumber.twoDigits();                        // '123'
+myThirdNumber.threeDigits();                      // '123'
+
+let myNumber = 1234;
+
+myNumber.twoDigits();                             // '1234'
+myNumber.threeDigits();                           // '1234'
+
 ```
 
 <hr>
