@@ -1,4 +1,4 @@
-# Dot Functins Utils
+# Dot Functions Utils
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
