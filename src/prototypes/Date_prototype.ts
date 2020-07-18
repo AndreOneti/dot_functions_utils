@@ -28,6 +28,34 @@ interface Date {
   getDayOfYear(): number;
   log(): Date;
   log(msg: string): Date;
+  toFormat(format: string,): string;
+  toFormat(format: string, language: 'en'): string;
+  toFormat(format: string, language: 'es'): string;
+  /**
+   * Function to Format date like you want.
+   *
+   * To day formate have 4 variations on date 01/07/2020:
+   *  - d -> 1
+   *  - dd -> 01
+   *  - ddd -> Wed
+   *  - dddd -> Wednesday
+   *
+   * To month formate have 4 variations on date 01/07/2020:
+   *  - m -> 7
+   *  - mm -> 07
+   *  - mmm -> July
+   *  - mmmm -> July
+   *
+   * To year formate have 2 variations on date 01/07/2020:
+   *  - yy -> 20
+   *  - yyyy -> 2020
+   *
+   * To hours, minutes and second formate have 1 variations on date 01/07/2020 00:18:35
+   *  - HH -> 00
+   *  - MM -> 18
+   *  - SS -> 35
+   */
+  toFormat(format: string, language: 'pt-br'): string;
 }
 
 Date.prototype.getWeekDay = function () {
@@ -77,12 +105,12 @@ Date.prototype.format = function () {
   let minute = this.getMinutes().toString().twoDigits();
   let second = this.getSeconds().toString().twoDigits();
   let arg = arguments[0];
-  if (arg && arg === "yyyy-mm-dd") return `${year}-${twoDigits(month)}-${twoDigits(day)}`;
-  if (arg && arg === "dd-mm-yyyy") return `${twoDigits(day)}-${twoDigits(month)}-${year}`;
-  if (arg && arg === "yyyy/mm/dd") return `${year}/${twoDigits(month)}/${twoDigits(day)}`;
-  if (arg && arg === "dd/mm/yyyy") return `${twoDigits(day)}/${twoDigits(month)}/${year}`;
-  if (arg && arg === "dd/mm/yyyy - hh:mm:ss") return `${twoDigits(day)}/${twoDigits(month)}/${year} - ${hour}:${minute}:${second}`;
-  return `${year}-${twoDigits(month)}-${twoDigits(day)}`;
+  if (arg && arg === "yyyy-mm-dd") return `${year}-${month.twoDigits()}-${day.twoDigits()}`;
+  if (arg && arg === "dd-mm-yyyy") return `${day.twoDigits()}-${month.twoDigits()}-${year}`;
+  if (arg && arg === "yyyy/mm/dd") return `${year}/${month.twoDigits()}/${day.twoDigits()}`;
+  if (arg && arg === "dd/mm/yyyy") return `${day.twoDigits()}/${month.twoDigits()}/${year}`;
+  if (arg && arg === "dd/mm/yyyy - hh:mm:ss") return `${day.twoDigits()}/${month.twoDigits()}/${year} - ${hour}:${minute}:${second}`;
+  return `${year}-${month.twoDigits()}-${day.twoDigits()}`;
 };
 
 Date.prototype.nextMonth = function (month: number) {
@@ -125,14 +153,62 @@ Date.prototype.getDayOfYear = function () {
   return day;
 }
 
-function twoDigits(digit: string | number): string {
-  if (0 <= digit && digit < 10) return "0" + digit.toString();
-  return digit.toString();
-}
-
 Date.prototype.log = function () {
   /* istanbul ignore next */
   let arg = arguments[0];
   console.log("[ " + (new Date()).format('dd/mm/yyyy - hh:mm:ss') + " ] " + (arg ? ("(" + arg + ") ") : "") + "> ", this);
   return this;
+}
+
+Date.prototype.toFormat = function (format: string, language: string = 'en'): string {
+
+  let monthRed: string[] = [],
+    weekRed: string[] = [],
+    month: string[] = [],
+    week: string[] = [];
+
+  if ('en' === language) {
+    month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    monthRed = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+    week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    weekRed = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  }
+
+  if ('es' === language) {
+    month = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    monthRed = ["Ene", "Feb", "Mar", "Abr", "Mayo", "Jun", "Jul", "Ago", "Sept", "Oct", "Nov", "Dic"];
+    week = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"];
+    weekRed = ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"];
+  }
+
+  if ('pt-br' === language) {
+    month = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+    monthRed = ["Jan", "Fev", "Mar", "Abr", "Maio", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+    week = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+    weekRed = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
+  }
+
+  var objParts: any = {
+    "d": this.getDate(),
+    "dd": this.getDate().twoDigits(),
+    "ddd": weekRed[this.getDay()],
+    "dddd": week[this.getDay()],
+    "m": this.getMonth() + 1,
+    "mm": `${this.getMonth() + 1}`.twoDigits(),
+    "mmm": monthRed[this.getMonth()],
+    "mmmm": month[this.getMonth()],
+    "yy": this.getFullYear().toString().substring(2),
+    "yyyy": this.getFullYear(),
+    "HH": this.getHours().twoDigits(),
+    "MM": this.getMinutes().twoDigits(),
+    "SS": this.getSeconds().twoDigits()
+  }
+
+  return (
+    format.replace(
+      new RegExp("(d{1,4}|m{1,4}|y{4}|y{2}|H{1,2}|M{1,2}|S{1,2})", "g"),
+      function ($1: string) {
+        return (objParts[$1]);
+      })
+  );
 }

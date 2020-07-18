@@ -144,3 +144,76 @@ describe('Date prototype test', () => {
     expect(dateNow.log("Date")).toBe(dateNow);
   });
 });
+
+describe('Date formatter test', () => {
+
+  let dateNow = new Date(2020, 6, 17);
+
+  it('should return the date formted like "17 17 Fri Friday" in eng', async () => {
+    expect(dateNow.toFormat("d dd ddd dddd")).toBe("17 17 Fri Friday");
+  });
+
+  it('should return the date formted like "17 17 Fri Friday" in eng', async () => {
+    expect(dateNow.toFormat("d dd ddd dddd", 'en')).toBe("17 17 Fri Friday");
+  });
+
+  it('should return the date formted like "17 17 Fri Friday" in es', async () => {
+    expect(dateNow.toFormat("d dd ddd dddd", 'es')).toBe("17 17 Vie Viernes");
+  });
+
+  it('should return the date formted like "17 17 Fri Friday" in pt-br', async () => {
+    expect(dateNow.toFormat("d dd ddd dddd", 'pt-br')).toBe("17 17 Sex Sexta");
+  });
+
+
+  it('should return the date formted like "7 07 July July" in eng', async () => {
+    expect(dateNow.toFormat("m mm mmm mmmm")).toBe("7 07 July July");
+  });
+
+  it('should return the date formted like "7 07 July July" in eng', async () => {
+    expect(dateNow.toFormat("m mm mmm mmmm", 'en')).toBe("7 07 July July");
+  });
+
+  it('should return the date formted like "7 07 Jul Julio" in es', async () => {
+    expect(dateNow.toFormat("m mm mmm mmmm", 'es')).toBe("7 07 Jul Julio");
+  });
+
+  it('should return the date formted like "7 07 Jul Julho" in pt-br', async () => {
+    expect(dateNow.toFormat("m mm mmm mmmm", 'pt-br')).toBe("7 07 Jul Julho");
+  });
+
+
+  it('should return the date formted like "20 2020" in eng', async () => {
+    expect(dateNow.toFormat("yy yyyy")).toBe("20 2020");
+  });
+
+  it('should return the date formted like "20 2020" in eng', async () => {
+    expect(dateNow.toFormat("yy yyyy", 'en')).toBe("20 2020");
+  });
+
+  it('should return the date formted like "20 2020" in es', async () => {
+    expect(dateNow.toFormat("yy yyyy", 'es')).toBe("20 2020");
+  });
+
+  it('should return the date formted like "20 2020" in pt-br', async () => {
+    expect(dateNow.toFormat("yy yyyy", 'pt-br')).toBe("20 2020");
+  });
+
+
+  it('should return the date formted like "00-00-00" in eng', async () => {
+    expect(dateNow.toFormat("HH-MM-SS")).toBe("00-00-00");
+  });
+
+  it('should return the date formted like "00-00-00" in eng', async () => {
+    expect(dateNow.toFormat("HH-MM-SS", 'en')).toBe("00-00-00");
+  });
+
+  it('should return the date formted like "00-00-00" in es', async () => {
+    expect(dateNow.toFormat("HH-MM-SS", 'es')).toBe("00-00-00");
+  });
+
+  it('should return the date formted like "00-00-00" in pt-br', async () => {
+    expect(dateNow.toFormat("HH-MM-SS", 'pt-br')).toBe("00-00-00");
+  });
+
+});
