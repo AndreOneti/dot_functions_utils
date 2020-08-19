@@ -183,6 +183,22 @@ let myNumber = 1234;
 myNumber.twoDigits();                                 // '1234'
 myNumber.threeDigits();                               // '1234'
 
+let financialNumber = 1000;
+
+financialNumber.format();                             // '1.000,00'
+
+financialNumber = 10;
+
+financialNumber.format();                             // '10,00'
+
+financialNumber = 10.50;
+
+financialNumber.format();                             // '10,50'
+
+financialNumber = 1000.99;
+
+financialNumber.format();                             // '1.000,99'
+
 ```
 
 <hr>
