@@ -37,4 +37,8 @@ describe('Date prototype test', () => {
   it('should return string 1000', async () => {
     expect((1000).threeDigits()).toBe("1000");
   });
+
+  it('should return string 1.000,00', async () => {
+    expect((1000).format()).toBe("1.000,00");
+  });
 });
