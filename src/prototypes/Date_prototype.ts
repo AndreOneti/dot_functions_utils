@@ -28,32 +28,96 @@ interface Date {
   getDayOfYear(): number;
   log(): Date;
   log(msg: string): Date;
+  /**
+   * Function to Format date like you want.
+   *
+   * To day formate have 4 variations on date 01/07/2020:
+   *  - DD -> 01
+   *  - DDD -> Wed
+   *  - DDDD -> Wednesday
+   *
+   * To month formate have 4 variations on date 01/07/2020:
+   *  - MM -> 07
+   *  - MMM -> July
+   *  - MMMM -> July
+   *
+   * To year formate have 2 variations on date 01/07/2020:
+   *  - YY -> 20
+   *  - YYYY -> 2020
+   *
+   * To hours, minutes and second formate have 1 variations on date 01/07/2020 00:18:35
+   *  - HR -> 00
+   *  - MN -> 18
+   *  - SC -> 35
+   */
   toFormat(format: string,): string;
+  /**
+   * Function to Format date like you want.
+   *
+   * To day formate have 4 variations on date 01/07/2020:
+   *  - DD -> 01
+   *  - DDD -> Wed
+   *  - DDDD -> Wednesday
+   *
+   * To month formate have 4 variations on date 01/07/2020:
+   *  - MM -> 07
+   *  - MMM -> July
+   *  - MMMM -> July
+   *
+   * To year formate have 2 variations on date 01/07/2020:
+   *  - YY -> 20
+   *  - YYYY -> 2020
+   *
+   * To hours, minutes and second formate have 1 variations on date 01/07/2020 00:18:35
+   *  - HR -> 00
+   *  - MN -> 18
+   *  - SC -> 35
+   */
   toFormat(format: string, language: 'en'): string;
+  /**
+   * Function to Format date like you want.
+   *
+   * To day formate have 4 variations on date 01/07/2020:
+   *  - DD -> 01
+   *  - DDD -> Wed
+   *  - DDDD -> Wednesday
+   *
+   * To month formate have 4 variations on date 01/07/2020:
+   *  - MM -> 07
+   *  - MMM -> July
+   *  - MMMM -> July
+   *
+   * To year formate have 2 variations on date 01/07/2020:
+   *  - YY -> 20
+   *  - YYYY -> 2020
+   *
+   * To hours, minutes and second formate have 1 variations on date 01/07/2020 00:18:35
+   *  - HR -> 00
+   *  - MN -> 18
+   *  - SC -> 35
+   */
   toFormat(format: string, language: 'es'): string;
   /**
    * Function to Format date like you want.
    *
    * To day formate have 4 variations on date 01/07/2020:
-   *  - d -> 1
-   *  - dd -> 01
-   *  - ddd -> Wed
-   *  - dddd -> Wednesday
+   *  - DD -> 01
+   *  - DDD -> Wed
+   *  - DDDD -> Wednesday
    *
    * To month formate have 4 variations on date 01/07/2020:
-   *  - m -> 7
-   *  - mm -> 07
-   *  - mmm -> July
-   *  - mmmm -> July
+   *  - MM -> 07
+   *  - MMM -> July
+   *  - MMMM -> July
    *
    * To year formate have 2 variations on date 01/07/2020:
-   *  - yy -> 20
-   *  - yyyy -> 2020
+   *  - YY -> 20
+   *  - YYYY -> 2020
    *
    * To hours, minutes and second formate have 1 variations on date 01/07/2020 00:18:35
-   *  - HH -> 00
-   *  - MM -> 18
-   *  - SS -> 35
+   *  - HR -> 00
+   *  - MN -> 18
+   *  - SC -> 35
    */
   toFormat(format: string, language: 'pt-br'): string;
 }
@@ -189,24 +253,24 @@ Date.prototype.toFormat = function (format: string, language: string = 'en'): st
   }
 
   var objParts: any = {
-    "d": this.getDate(),
-    "dd": this.getDate().twoDigits(),
-    "ddd": weekRed[this.getDay()],
-    "dddd": week[this.getDay()],
-    "m": this.getMonth() + 1,
-    "mm": `${this.getMonth() + 1}`.twoDigits(),
-    "mmm": monthRed[this.getMonth()],
-    "mmmm": month[this.getMonth()],
-    "yy": this.getFullYear().toString().substring(2),
-    "yyyy": this.getFullYear(),
-    "HH": this.getHours().twoDigits(),
-    "MM": this.getMinutes().twoDigits(),
-    "SS": this.getSeconds().twoDigits()
-  }
+    "D": this.getDate(),
+    "DD": this.getDate().twoDigits(),
+    "DDD": weekRed[this.getDay()],
+    "DDDD": week[this.getDay()],
+    "M": this.getMonth() + 1,
+    "MM": ("" + (this.getMonth() + 1)).twoDigits(),
+    "MMM": monthRed[this.getMonth()],
+    "MMMM": month[this.getMonth()],
+    "YY": this.getFullYear().toString().substring(2),
+    "YYYY": this.getFullYear(),
+    "HR": this.getHours().twoDigits(),
+    "MN": this.getMinutes().twoDigits(),
+    "SC": this.getSeconds().twoDigits()
+  };
 
   return (
     format.replace(
-      new RegExp("(d{1,4}|m{1,4}|y{4}|y{2}|H{1,2}|M{1,2}|S{1,2})", "g"),
+      new RegExp("(HR|MN|SC|D{2,4}|M{2,4}|Y{4}|Y{2})", "g"),
       function ($1: string) {
         return (objParts[$1]);
       })

@@ -56,8 +56,8 @@ dateNow.log("Date");                                  // log - [10/06/2020 - 19:
 
 dateNow = new Date(2020, 6, 18, 0, 18, 35);           // 2020-04-13T14:09:02.649Z
 
-dateNow.toFormat("Day dd, mmmm of yyyy");             // "Day 18, July of 2020"
-dateNow.toFormat("Day dd, mmmm de yyyy", 'pt-br');    // "Day 18, Julho de 2020"
+dateNow.toFormat("Day DD, MMMM of YYYY");             // "Day 18, July of 2020"
+dateNow.toFormat("Day DD, MMMM de YYYY", 'pt-br');    // "Day 18, Julho de 2020"
 
 ```
 
