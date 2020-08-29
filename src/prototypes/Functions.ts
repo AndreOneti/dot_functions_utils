@@ -27,7 +27,7 @@ export function generateUniqueID(): string {
   return id;
 }
 
-export function log(message: any, level: "Error" | "Debug" | "OK"): void {
+export function log(message: any, level: "Error" | "Debug" | "Success"): void {
   console.log(`[ ${(new Date()).format('dd/mm/yyyy - hh:mm:ss')} ] > `, message);
 }
 
