@@ -1,8 +1,8 @@
 'use strict'
 
 interface Array<T> {
-  getLastElement(): string;
-  getFirstElement(): string;
+  getLastElement(): T;
+  getFirstElement(): T;
   getMiddleElement(): Array<T> | null;
   log(): Array<T>;
   log(msg: string): Array<T>;
