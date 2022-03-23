@@ -96,6 +96,32 @@ describe("String prototype test", () => {
     result = name.map((letter) => letter.toUpperCase());
     expect(result).toBe(expected);
   });
+
+  it("should return formatted string", () => {
+    let str = "{0} is dead, but {1} is alive! {0} {2}";
+    let expected = "ASP is dead, but ASP.NET is alive! ASP {2}";
+    let result = str.format("ASP", "ASP.NET");
+
+    expect(result).toBe(expected);
+  });
+
+  it("should return string count", () => {
+    let str = "Rectangle { Rectangle {}}";
+    let expected = 2;
+
+    let result = str.count("{");
+    expect(result).toBe(expected);
+
+    result = str.count("}");
+    expect(result).toBe(expected);
+
+    expected = 0;
+    result = str.count("X");
+    expect(result).toBe(expected);
+
+    result = str.count("Z");
+    expect(result).toBe(expected);
+  });
 });
 
 it("should return string and log on console", async () => {

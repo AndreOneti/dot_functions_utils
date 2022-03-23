@@ -14,6 +14,8 @@ interface String {
   map(
     callbackfn: (value: string, index: number, array: string[]) => string
   ): string;
+  format(...labes: string[]): string;
+  count(rgx: string | number): number;
 }
 
 String.prototype.twoDigits = function () {
@@ -105,4 +107,16 @@ String.prototype.map = function (
   callbackfn: (value: string, index: number, array: string[]) => string
 ): string {
   return this.split("").map(callbackfn).join("");
+};
+
+String.prototype.format = function () {
+  const args = arguments;
+  return this.replace(/{(\d+)}/g, function (match, number) {
+    return typeof args[number] != "undefined" ? args[number] : match;
+  });
+};
+
+String.prototype.count = function count(rgx: string | number) {
+  const rx = new RegExp(String(rgx), "ig");
+  return (this.match(rx) || []).length;
 };
